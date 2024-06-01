@@ -9,4 +9,7 @@ interface CountryApi {
     @GET("v3.1/all")
     fun getAllCountries(): Call<List<Country>>
 
+    @GET("v3.1/all?fields=name")
+    fun getAllCountriesName(): Call<List<Country>>
+
 }

@@ -13,6 +13,5 @@ object RetrofitInstance {
             .addConverterFactory(GsonConverterFactory.create())
             .build()
             .create(CountryApi::class.java)
-
     }
 }
