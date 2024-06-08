@@ -2,7 +2,7 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="horizontal">>
+    android:orientation="horizontal">
 
     <androidx.cardview.widget.CardView
         android:id="@+id/country_view_cardview"
@@ -10,20 +10,36 @@
         android:layout_height="wrap_content"
         android:layout_margin="4dp">
 
-        <ImageView
-            android:id="@+id/flagImageView"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:contentDescription="@string/flag" />
-
-        <TextView
-            android:id="@+id/countryNameTextView"
-            android:layout_width="wrap_content"
+        <FrameLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal|center_vertical"
-            android:paddingStart="16dp"
-            android:textSize="16sp" />
+            android:padding="8dp">
 
+            <ImageView
+                android:id="@+id/flagImageView"
+                android:layout_width="50dp"
+                android:layout_height="50dp" />
+
+            <TextView
+                android:id="@+id/countryNameTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal|center_vertical"
+                android:text="Nom Pays"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/capitalNameTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="50dp"
+                android:text="Capitale Pays"
+                android:textSize="12sp"
+                android:alpha="0.6"/>
+
+        </FrameLayout>
     </androidx.cardview.widget.CardView>
 
 </FrameLayout>
