@@ -48,54 +48,54 @@ data class Name(
 data class NativeName(
     val official: String,
     val common: String
-)
+) : Serializable
 
 data class Currency(
     val name: String,
     val symbol: String
-)
+) : Serializable
 
 data class IDD(
     val root: String,
     val suffixes: List<String>
-)
+) : Serializable
 
 data class Translation(
     val official: String,
     val common: String
-)
+) : Serializable
 
 data class Demonyms(
     val eng: Demonym,
     val fra: Demonym
-)
+) : Serializable
 
 data class Demonym(
     val f: String,
     val m: String
-)
+) : Serializable
 
 data class Maps(
     val googleMaps: String,
     val openStreetMaps: String
-)
+) : Serializable
 
 data class Car(
     val signs: List<String>,
     val side: String
-)
+) : Serializable
 
 data class Flags(
     val png: String,
     val svg: String,
     val alt: String
-)
+) : Serializable
 
 data class CoatOfArms(
     val png: String,
     val svg: String
-)
+) : Serializable
 
 data class CapitalInfo(
     val latlng: List<Double>
-)
+) : Serializable

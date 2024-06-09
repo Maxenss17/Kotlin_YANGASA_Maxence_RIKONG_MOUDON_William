@@ -1,5 +1,6 @@
 package com.example.projet_kotlin
 
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -27,13 +28,16 @@ class CountryAdapter(private var countries: List<Country>) : RecyclerView.Adapte
     }
 
     override fun onBindViewHolder(holder: CountryViewHolder, position: Int) {
-
         val country = countriesFiltered[position]
         holder.countryNameTextView.text = country.name.common
         holder.capitalNameTextView.text = country.capital?.firstOrNull() ?: "Aucune Capitale"
         Glide.with(holder.itemView.context).load(country.flags.png).into(holder.flagImageView)
 
         holder.cardView.setOnClickListener {
+            val context = holder.itemView.context
+            val intent = Intent(context, CountryDetailsActivity::class.java)
+            intent.putExtra("country_name", country.name.common)
+            context.startActivity(intent)
         }
     }
 
@@ -56,8 +60,7 @@ class CountryAdapter(private var countries: List<Country>) : RecyclerView.Adapte
 
     private fun calculateRelevanceScore(country: Country, query: String): Int {
         val nameScore = if (country.name.common.contains(query, ignoreCase = true)) 2 else 0
-        val capitalScore = if (country.capital?.isNotEmpty() == true && country.capital.first().contains(query, ignoreCase = true) == true) 1 else 0
+        val capitalScore = if (country.capital?.isNotEmpty() == true && country.capital.first().contains(query, ignoreCase = true)) 1 else 0
         return nameScore + capitalScore
     }
 }
-
