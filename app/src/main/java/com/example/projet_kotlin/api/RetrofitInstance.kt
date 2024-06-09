@@ -13,8 +13,6 @@ import java.util.concurrent.TimeUnit
 object RetrofitInstance {
 
     private const val BASE_URL = "https://restcountries.com/"
-    private const val TIMEOUT = 120L
-    private const val MAX_RETRIES = 6
 
     val api: CountryApi by lazy {
         val logging = HttpLoggingInterceptor().apply {
@@ -28,9 +26,9 @@ object RetrofitInstance {
         val client = OkHttpClient.Builder()
             .addInterceptor(logging)
             .addInterceptor(retryInterceptor)
-            .connectTimeout(TIMEOUT, TimeUnit.SECONDS)
-            .readTimeout(TIMEOUT, TimeUnit.SECONDS)
-            .writeTimeout(TIMEOUT, TimeUnit.SECONDS)
+            .connectTimeout(120, TimeUnit.SECONDS)
+            .readTimeout(120, TimeUnit.SECONDS)
+            .writeTimeout(120, TimeUnit.SECONDS)
             .build()
 
         Retrofit.Builder()
@@ -46,7 +44,7 @@ object RetrofitInstance {
         return try {
             chain.proceed(request)
         } catch (e: IOException) {
-            if (attempt < MAX_RETRIES) {
+            if (attempt < 6) {
                 makeRequestWithRetry(chain, request, attempt + 1)
             } else {
                 throw e
