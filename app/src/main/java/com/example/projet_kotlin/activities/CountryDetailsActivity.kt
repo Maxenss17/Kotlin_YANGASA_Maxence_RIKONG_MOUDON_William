@@ -12,7 +12,6 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.bumptech.glide.Glide
 import com.example.projet_kotlin.R
-import com.example.projet_kotlin.api.JsonFiles
 import com.example.projet_kotlin.api.JsonFiles.readJsonFromFile
 import com.example.projet_kotlin.api.JsonFiles.writeJsonToFile
 import com.example.projet_kotlin.model.Country
@@ -182,7 +181,7 @@ class CountryDetailsActivity : AppCompatActivity() {
 
         Glide.with(this).load(country.flags.png).into(flagImageView)
         countryNameTextView.text = country.name.common
-        capitalNameTextView.text = formatText("Capital : ${country.capital?.firstOrNull() ?: "Aucune Capitale"}")
+        capitalNameTextView.text = formatText("Capital : ${country.capital?.firstOrNull() ?: "No Capital"}")
         populationTextView.text = formatText("Population : ${country.population}")
         regionTextView.text = formatText("Region : ${country.region}")
         subregionTextView.text = formatText("Subregion : ${country.subregion}")

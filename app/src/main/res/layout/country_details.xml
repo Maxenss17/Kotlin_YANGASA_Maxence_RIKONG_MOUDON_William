@@ -68,14 +68,14 @@
         android:layout_height="wrap_content"
         android:text="Add to Favorites"
         android:textSize="14sp"
-        android:layout_marginTop="62dp"/>
+        android:layout_marginTop="40dp"/>
 
     <Button
         android:id="@+id/deleteFavoriteButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
-        android:text="Delete from favorite"
+        android:text="Delete from favorites"
         android:textSize="14sp" />
 
     <FrameLayout

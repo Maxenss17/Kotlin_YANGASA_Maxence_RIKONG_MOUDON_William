@@ -32,7 +32,7 @@ class CountryAdapter(private var countries: List<Country>) : RecyclerView.Adapte
     override fun onBindViewHolder(holder: CountryViewHolder, position: Int) {
         val country = countriesFiltered[position]
         holder.countryNameTextView.text = country.name.common
-        holder.capitalNameTextView.text = country.capital?.firstOrNull() ?: "Aucune Capitale"
+        holder.capitalNameTextView.text = country.capital?.firstOrNull() ?: "No Capital"
         Glide.with(holder.itemView.context).load(country.flags.png).into(holder.flagImageView)
 
         holder.cardView.setOnClickListener {

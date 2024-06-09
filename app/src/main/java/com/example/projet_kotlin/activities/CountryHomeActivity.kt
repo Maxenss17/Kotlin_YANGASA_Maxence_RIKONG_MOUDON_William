@@ -22,7 +22,6 @@ class CountryHomeActivity : AppCompatActivity() {
 
     private lateinit var recyclerView: RecyclerView
     private lateinit var adapter: CountryAdapter
-    private lateinit var countries: List<Country>
     private lateinit var searchView: SearchView
     private lateinit var favoriteButton : Button
 
@@ -70,7 +69,6 @@ class CountryHomeActivity : AppCompatActivity() {
     private fun fetchCountries() {
 
         val jsonFileName = "countries.json"
-
         RetrofitInstance.api.getAllCountries().enqueue(object : Callback<List<Country>> {
 
             override fun onResponse(call: Call<List<Country>>, response: Response<List<Country>>) {
