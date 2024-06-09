@@ -14,7 +14,7 @@ object RetrofitInstance {
 
     private const val BASE_URL = "https://restcountries.com/"
     private const val TIMEOUT = 120L
-    private const val MAX_RETRIES = 3
+    private const val MAX_RETRIES = 6
 
     val api: CountryApi by lazy {
         val logging = HttpLoggingInterceptor().apply {

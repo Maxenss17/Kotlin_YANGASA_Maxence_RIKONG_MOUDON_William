@@ -25,7 +25,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal|center_vertical"
-                android:text="Nom du pays"
+                android:text="Countrie's name"
                 android:textSize="16sp" />
 
             <TextView
@@ -35,7 +35,7 @@
                 android:layout_alignParentEnd="true"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="50dp"
-                android:text="Capitale du pays"
+                android:text="Countrie's capital"
                 android:textSize="12sp"
                 android:alpha="0.6"/>
 

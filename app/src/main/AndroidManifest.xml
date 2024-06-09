@@ -16,9 +16,9 @@
         android:theme="@style/Theme.Projet_kotlin"
         tools:targetApi="31">
         <activity
-            android:name=".MainActivity"
+            android:name=".activities.CountryHomeActivity"
             android:exported="true"
-            android:label="@string/app_name">
+            android:label="Countrie Search">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
@@ -26,9 +26,19 @@
         </activity>
 
         <activity
-            android:name=".CountryDetailsActivity"
+            android:name=".activities.CountryDetailsActivity"
             android:exported="true"
-            android:label="@string/app_name">
+            android:label="Countrie Details">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".activities.FavoriteActivity"
+            android:exported="true"
+            android:label="Favorites">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />

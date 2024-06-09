@@ -8,7 +8,4 @@ import retrofit2.http.Path
 interface CountryApi {
     @GET("v3.1/all")
     fun getAllCountries(): Call<List<Country>>
-
-    @GET("v3.1/name/{name}")
-    fun getCountryByName(@Path("name") name: String): Call<List<Country>>
 }
